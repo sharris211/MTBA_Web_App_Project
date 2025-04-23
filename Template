@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MBTA Stop Finder</title>
+</head>
+<body>
+    <h1>Find the Nearest MBTA Stop</h1>
+    <form method="post">
+        <label for="place">Enter a location:</label>
+        <input type="text" name="place" required>
+        <button type="submit">Find</button>
+    </form>
+
+    {% if result %}
+        <p><strong>{{ result }}</strong></p>
+    {% endif %}
+</body>
+</html>
