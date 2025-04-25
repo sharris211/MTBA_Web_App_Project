@@ -17,10 +17,11 @@ MBTA_API_KEY = os.getenv("MBTA_API_KEY")
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 # Useful base URLs (you need to add the appropriate parameters for each API request)
-# MAPBOX_BASE_URL = "https://api.mapbox.com/search/searchbox/v1/suggest?q={search_text}""
-MAPBOX_BASE_URL = "https://apspi.mapbox.com/geocoding/v5/mapbox.places"
+
 MBTA_BASE_URL = "https://api-v3.mbta.com/stops"
 WEATHER_BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
+MAPBOX_BASE_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
+
 
 def get_json(url: str) -> dict:
     """
