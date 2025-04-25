@@ -1,1 +1,15 @@
-Sam and Nate MTBA Web App Project. 
+# MBTA Web App Project
+
+## Project Overview
+
+The purpose of this project was to build a Flask web application that allows users to enter a location and receive information about the nearest MBTA stop and current weather conditions at that location. We integrated three APIs: Mapbox for geocoding user input into latitude and longitude, the MBTA API to identify nearby subway or bus stops, and OpenWeatherMap to fetch real-time weather data. The application also includes meaningful error messages to guide users when something goes wrong, such as invalid input or API issues. Our goal was to create a clean, user-friendly experience while also practicing full-stack development using Python, HTML, and API integration.
+
+## Reflections
+
+From a development standpoint, the project was a great learning experience, though not without facing challenges along the way. One of the most difficult parts was getting the API integration to work particularly with the Mapbox API. At first, we could not get the base URL to work, and it was not loading our API token correctly. After getting help using AI, we were able to debug the situation and identify the issue. Another major issue we ran into was working with the code to handle user input and display the results correctly. At first, we had trouble making sure the information from the user input was passed to the result page properly. This caused some data to not show up or be displayed incorrectly. After going over the code again, we fixed the issue and made sure everything displayed as it should
+
+In terms of team workflow, we initially planned to divide the project into frontend (HTML forms and result pages) and backend (Flask app, API handling). However, as development progressed, the lines blurred, and we ended up collaborating more closely on all parts of the project working together at the same timne. This worked in our favor since it allowed us to problem-solve together. We encountered some issues with the code functioning correctly at times but by working together at the same time we were able to talk through and problem solve issues. If we were to do this again, we would probably start the project earlier so we would have time to meet with our proffesor about issues we had and to add more features to our code. 
+
+This project deepened our understanding of how web apps work, especially when multiple APIs are involved. We learned a lot about writing consise effective code, dealing with environment variables, and how to structure a Flask app effectively. Using AI tools like ChatGPT was incredibly helpful for writing debugging our main issues talked about above. That said, we also learned how important it is to slow down and really understand what the code is doing. There were moments when we rushed to get things working, only to realize we had to go back and fix something that could’ve been avoided. In the future, we want to focus more on organizing our code from the start, adding comments, and planning out our project before jumping in. This would help make the process smoother and less stressful.
+
+
