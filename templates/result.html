@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results for {{ place_name }}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+                <div class="flex justify-between items-start mb-6">
+                    <h1 class="text-2xl font-bold">Results for {{ place_name }}</h1>
+                    <p class="text-sm text-gray-500">{{ timestamp }}</p>
+                </div>
+
+                <!-- Location Information -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold mb-3 text-blue-600">Location Details</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded">
+                            <p class="text-gray-600">City</p>
+                            <p class="font-medium">{{ location.city }}</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <p class="text-gray-600">Coordinates</p>
+                            <p class="font-medium">{{ location.lon }}, {{ location.lat }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Station Information -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold mb-3 text-blue-600">Nearest MBTA Station</h2>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-gray-600">Station Name</p>
+                                <p class="font-medium">{{ station.name }}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Wheelchair Accessible</p>
+                                <p class="font-medium">
+                                    {% if station.wheelchair_accessible %}
+                                    <span class="text-green-600">✓ Yes</span>
+                                    {% else %}
+                                    <span class="text-red-600">✗ No</span>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Information -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold mb-3 text-blue-600">Weather Conditions</h2>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-gray-600">Temperature</p>
+                                <p class="font-medium">{{ weather.temp }}°F</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Feels Like</p>
+                                <p class="font-medium">{{ weather.feels_like }}°F</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Condition</p>
+                                <p class="font-medium">{{ weather.description }}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Humidity</p>
+                                <p class="font-medium">{{ weather.humidity }}%</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">Wind Speed</p>
+                                <p class="font-medium">{{ weather.wind_speed }} mph</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ url_for('index') }}" 
+                   class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200">
+                    New Search
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
